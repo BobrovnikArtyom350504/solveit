@@ -1,0 +1,31 @@
+@font-face {
+  font-family: Helvetica;
+  src: url(../../assets/fonts/helvetica-neue.ttf);
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url('../../assets/fonts/Roboto.ttf');
+}
+
+@font-face {
+  font-family: RobotoThin;
+  src: url(../../assets/fonts/Roboto-thin.ttf);
+}
+
+@font-face {
+  font-family: PTMono;
+  src: url(../../assets/fonts/pt-mono.ttf);
+}
+
+body {
+  @include  font-styles($font-family: 'Helvetica, sans-serif', $color: $dark-text-color);
+}
+p, span {
+  font-size: 24px;
+}
+
+section > h1 {
+  @include  font-styles($color: $brand-dark-color, $weight: 200, $size: 28px);
+  text-transform: uppercase;
+}

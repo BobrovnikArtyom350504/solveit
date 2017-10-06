@@ -1,0 +1,30 @@
+@import '../helpers/variables';
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  min-width: 160px;
+  border-radius: 100px;
+  background: transparent;
+  border-width: 2px;
+  border-style: solid;
+  text-transform: capitalize;
+  text-align: center;
+  cursor: pointer;
+
+  &.accent {
+    background-color: $btn-accent-color;
+    border-color:  $btn-accent-color;
+    color: $light-text-color;
+  }
+
+  &.primary {
+    border-color: $btn-accent-color;
+    color: $btn-accent-color;
+  }
+
+  &.secondary {
+    border-color: $light-text-color;
+    color: $light-text-color;
+  }
+}

@@ -1,0 +1,56 @@
+.main-menu {
+  a {
+    &:not(:last-child) {
+      margin-right: 40px;
+      @include respond-to(lg) {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+.nav-trigger {
+  display: none;
+  z-index: 3;
+}
+@include respond-to(md) {
+  .nav-trigger {
+    display: block;
+  }
+  .main-menu {
+    display: none;
+  }
+}
+
+body > .overlay {
+  @include transition(all, ease-in, .4s);
+
+  &.shown {
+    width: 100%;
+    height: 100%;
+    padding-top: 50px;
+    background: rgba(0,0,0, .95);
+  }
+  overflow: hidden;
+
+  .main-nav {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: none;
+
+    a {
+      display: block;
+      padding: 20px 0;
+      text-align: center;
+      color: white;
+      white-space: nowrap;
+      border-radius: 0 !important;
+      border: 0 !important;
+
+
+      &.btn.primary {
+        color: $brand-light-color;
+      }
+    }
+  }
+}

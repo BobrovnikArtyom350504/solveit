@@ -1,0 +1,333 @@
+@import '../base/common';
+
+.icon {
+    background-image: url('../../assets/img/technology-icons.png');
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.icon-android {
+    width: 50px;
+    height: 50px;
+    background-position: -5px -5px;
+}
+
+.icon-apple {
+    width: 50px;
+    height: 50px;
+    background-position: -65px -5px;
+}
+
+.icon-imac {
+    width: 50px;
+    height: 50px;
+    background-position: -5px -65px;
+}
+
+.icon-server {
+    width: 50px;
+    height: 50px;
+    background-position: -65px -65px;
+}
+
+.banner {
+  position: relative;
+  height: 100%;
+
+  @include respond-to(lg) {
+    height: auto;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .preview-wrapper {
+    position: absolute;
+    z-index: 5;
+    right: 8%;
+
+    @include respond-to(md) {
+      right: 20px;
+    }
+
+    .logo {
+      width: 15vw;
+      height: auto;
+      display: block;
+      margin: 0 auto 40px;
+
+      @include respond-to(sm) {
+        width: 25vw;
+        margin-bottom: 10px;
+      };
+    }
+
+    .preview {
+      width: auto;
+      max-width: 100%;
+    }
+  }
+
+  .technologies {
+    @include flexbox();
+    @include justify-content(center);
+    @include flex-direction(column);
+    position: absolute;
+    padding-left: 70px;
+    left: 0;
+
+    @include respond-to(lg) {
+      padding-left: 10px;
+    }
+
+    & > .technology {
+      &:not(:last-child) {
+        margin-bottom: 60px;
+      }
+
+      .icon {
+        vertical-align: middle;
+      }
+
+      span {
+        padding-left: 25px;
+        text-transform: uppercase;
+        font-size: 16px;
+        color: #333;
+        vertical-align: middle;
+      }
+
+      @include respond-to(lg) {
+        .icon {
+          @include scale(.5);
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+
+        span {
+          font-size: 14px;
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+}
+
+body > article {
+  float: right;
+  padding: 30px 20px;
+  margin-right: 8%;
+  width: 50vw;
+  text-align: center;
+  position: relative;
+
+  @include respond-to(md) {
+    margin-right: 0;
+    padding: 40px 20px 10px;
+    width: 100%;
+  };
+
+  h1, p {
+    color: #666;
+    width: 100%;
+    max-width: 700px;
+    display: inline-block;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+}
+
+.project {
+  @include flexbox();
+  @include flex-wrap(wrap);
+
+  .overview, .preview  {
+    @include flex-basis(50%);
+    width: 50%;
+    @media (max-width: 830px) {
+      flex-basis: 100%;
+      width: 100%;
+      margin: 20px 0;
+    }
+  }
+
+  .overview {
+    padding: 95px 65px 85px;
+    margin: 90px 0;
+
+    @media (max-width: 830px) {
+      margin: 20px 0;
+      padding: 50px 25px;
+    }
+
+    h1, p {
+      color: white;
+    }
+
+    h1 {
+      font-size: 45px;
+      margin-bottom: 80px;
+      @media (max-width: 830px) {
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+    }
+
+    p {
+      font-size: 17px;
+      margin-bottom: 30px;
+
+      @media (max-width: 830px) {
+        font-size: 14px;
+        margin-bottom: 14px;
+      }
+    }
+  }
+
+  .preview {
+    @include flexbox();
+    @include justify-content(center);
+    img {
+      width: 240px;
+      max-width: 50%;
+      height: auto;
+      @include align-self(center);
+      &.back {
+        margin: 75px 0 0 75px;
+      }
+
+      &.front {
+        @include transform(translate(-75px, -30px));
+      }
+    }
+  }
+}
+
+.technologies-banner {
+  padding: 60px 20px;
+
+  h1, p {
+    max-width: 415px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    margin-bottom: 35px;
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.cta {
+  padding: 40px 0 90px;
+  @include flexbox();
+  @include flex-direction(column);
+  @include justify-content(center);
+
+  @include respond-to(sm) {
+    padding: 15px 0;
+  }
+
+  article {
+    @include align-self(center);
+    text-align: center;
+
+    h1 {
+      font-size: 24px;
+      line-height: 30px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .links {
+    @include align-self(center);
+    padding-top: 35px;
+
+    a {
+      display: inline-block;
+      margin: 0 15px;
+      @include respond-to(sm) {
+        margin: 0 5px;
+      }
+      img {
+        width: 140px;
+        height: auto;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.way-chat {
+  $preview-width: 50vw;
+  $preview-offset: $preview-width * 0.25;
+
+  .preview-wrapper {
+    bottom: - $preview-offset;
+
+    .preview {
+      width: $preview-width;
+      height: auto;
+    }
+  }
+
+  .space-fix {
+    height: $preview-offset;
+  }
+
+  .technologies {
+    $width: 27vw;
+    width: $width;
+    height: $width * 1.5;
+    background: url('../../assets/img/way-chat/circle.png');
+    background-size: contain;
+    bottom: - $preview-offset;
+
+    @include respond-to(md) {
+      $width: 35vw;
+      width: $width;
+      height: $width * 1.5;
+    };
+
+    @include respond-to(sm) {
+      $width: 60vw;
+      bottom: -40vw;
+      width: $width;
+      height: $width * 1.5;
+    };
+  }
+
+  .project {
+    .overview {
+      background: #009999;
+    }
+  }
+
+  .technologies-banner {
+    background: url('../../assets/img/way-chat/technologies-banner.png');
+    background-size: cover;
+    h1, p {
+      color: white;
+    }
+  }
+}

@@ -1,0 +1,371 @@
+@import '../base/common';
+
+.services {
+  position: relative;
+  padding: 60px 120px;
+  text-align: center;
+  @include flexbox();
+  @include flex-direction(column);
+  @include justify-content(center);
+  background: url('../../assets/img/services-background.jpg');
+  background-size: cover;
+
+  @include respond-to(sm) {
+    padding: 50px 25px;
+  };
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, .85);
+  }
+
+  & > article {
+    max-width: 540px;
+    display: inline-block;
+    @include align-self(center);
+    z-index: 2;
+
+    h1 {
+      text-transform: capitalize;
+      font-size: 25px;
+      color: #4f5362;
+      padding-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #4f5362;
+      margin-bottom: 60px;
+
+      @include respond-to(sm) {
+        display: none;
+      };
+    }
+
+    @media (min-width: 1380px) {
+      max-width: 750px;
+
+      h1 {
+        font-size: 32px;
+        padding-bottom: 50px;
+      }
+
+      p {
+        font-size: 24px;
+        margin-bottom: 120px;
+      }
+    }
+
+    @include respond-to(sm)  {
+      h1 {
+        padding-bottom: 50px;
+      }
+    };
+  }
+
+  & > .row {
+    z-index: 3;
+
+    .service {
+      @include align-self(baseline);
+
+      @include respond-to(sm) {
+        &:nth-child(-n+4) {
+          display: none;
+        }
+        &:nth-child(-n+2) {
+          display: block;
+        }
+      };
+
+      &:nth-child(-n+3) {
+        margin-bottom: 8%;
+      }
+
+      &.flip-container {
+        @include perspective(1000px);
+        cursor: pointer;
+
+        .flipper {
+          @include transition(all, 0.6s, ease-in-out);
+          transition-delay: 0.1s;
+        	@include transform-style(preserve-3d);
+        	position: relative;
+          height: 150px;
+
+          .front, .back {
+            @include backface-visibility-hidden();
+          	position: absolute;
+          	top: 0;
+          	left: 0;
+            width: 100%;
+            height: 100%;
+          }
+
+          .front {
+          	z-index: 2;
+
+            img {
+              display: inline-block;
+              width: 100px;
+              height: 100px;
+              object-fit: contain;
+              margin-bottom: 20px;
+              perspective: 1000;
+            }
+
+            h3 {
+              font-size: 14px;
+              color: #4f5362;
+              text-transform: capitalize;
+            }
+          }
+
+          .back {
+          	@include rotateY(180);
+            border-radius: 3px;
+            @include flexbox();
+            @include justify-content(center);
+            box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, .1);
+            background: rgba(255, 255, 255, .35);
+
+            @include respond-to(sm) {
+              padding: 10px;
+            };
+
+            p {
+              font-size: 14px;
+              max-width: 200px;
+              @include align-self(center);
+              color: #4f5362;
+              font-family: roboto;
+              font-weight: 200;
+              letter-spacing: 0.05em;
+            }
+          }
+        }
+
+        &:hover {
+          .flipper {
+        		@include rotateY(180);
+          }
+        }
+
+        @media (min-width: 1800px) {
+          .flipper {
+            height: 250px;
+
+            .front {
+              h3 {
+                font-size: 18px;
+              }
+
+              img {
+                height: 170px;
+                width: 170px;
+              }
+            }
+
+            .back {
+              p {
+                font-size: 18px !important;
+                line-height: 22px;
+                max-width: 270px !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.banners, .portfolio, .bottom {
+  & > * {
+    min-height: 50vh;
+
+    @include respond-to(sm) {
+      height: auto;
+      min-height: 350px;
+      padding: 50px 25px;
+    };
+
+    @media screen and (orientation:portrait) {
+      height: auto;
+      min-height: 350px;
+    }
+  }
+}
+
+.flower {
+  box-shadow: 0 0px 20px 6px rgba(0,0,0, .5);
+}
+
+.coder-designers, .flower {
+  @include flexbox();
+  text-align: center;
+  @include justify-content(center);
+
+  article {
+    max-width: 700px;
+    @include align-self(center);
+
+    h1 {
+      font-size: 36px;
+      padding-bottom: 30px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      font-family: RobotoThin;
+    }
+
+    p {
+      font-size: 22px;
+      line-height: 28px;
+      font-family: Roboto; 
+    }
+  }
+}
+.coder-designers {
+  background: url('../../assets/img/coders-designers.png') center 0 no-repeat fixed;
+  background-size: cover;
+  position: relative;
+
+  &:before {
+    position: absolute;
+    display: block;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.4);
+    z-index: 1;
+  }  
+
+  article {
+    z-index: 2;
+  }
+
+  h1, p {
+    color: $light-text-color;
+  }
+}
+
+.flower {
+  background: #e9e9e8;
+  padding: 50px 0;
+
+  @include respond-to(sm) {
+    padding: 50px 25px;
+  };
+
+  img {
+    width: 60px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 35px;
+
+    @media (min-width: 1800px) {
+      width: 90px;
+      height: 160px;
+    }
+  }
+
+  h1, p {
+    color: #333333;
+  }
+}
+
+.portfolio, .bottom {
+  .project {
+    height: 1px;
+    position: relative;
+    overflow: hidden;
+    @include transition(all, 0.2s, ease-out);
+
+    .overlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      @include transform(scale(1.1));
+    }
+
+    .logo-wrapper {
+      position: absolute;
+      height: 100%;
+      left: 95px;
+      top: 0;
+      @include flexbox();
+      @include flex-grow(5);
+      @include flex-direction(column);
+      @include justify-content(center);
+
+      @include respond-to(sm) {
+        left: 50%;
+        @include transform(translate(-50%, 0));
+
+        &.right {
+          right: inherit!important;
+          left: 50%!important;
+        }
+
+        .btn.right {
+          @include align-self (center);
+        }
+      };
+
+      &.right {
+        left: inherit;
+        right: 95px;
+      }
+
+      img.logo {
+        width: auto;
+        height: 200px;
+        z-index: 2;
+        margin-bottom: 25px;
+
+        &.long {
+          height: 130px;
+        }
+      }
+
+      .btn {
+        @include align-self(center);
+        &.right {
+          @include align-self(flex-end);
+        }
+      }
+    }
+
+    &.z {
+      .overlay {
+        background: url('../../assets/img/portfolio-z.png') no-repeat center center;
+        background-size: cover;
+      }
+    }
+
+    &.way-chat {
+      .overlay {
+        background: url('../../assets/img/portfolio-way-chat.png') no-repeat center center;
+        background-size: cover;
+      }
+    }
+
+    &.inter-city {
+      .overlay {
+        background: url('../../assets/img/portfolio-inter-city.png') no-repeat center center;
+        background-size: cover;
+      }
+    }
+  }
+}
