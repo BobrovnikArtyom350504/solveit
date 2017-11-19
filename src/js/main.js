@@ -2,27 +2,27 @@ let $ = require('jquery');
 let slick = require('slick-carousel');
 $(document).ready(() => {
 
-  moveBackground();
+  
   $('.main-banner').on('init', (event, slick)=>{
     let slide = $(slick['$slides'][0]);
     setTimeout(function() {
-      slide.find('.overlay').slideDown(500);
       slide.find('.project-view img').slideDown(500);
       slide.find('.overview').fadeIn(300);
-    },500);
+    });
   });
 
-  $('.main-banner').slick({
-    autoplay: true,
-    autoplaySpeed: 5000,
-    speed: 300,
-    arrows: false
-  });
+  setTimeout(()=>{
+    $('.main-banner').slick({
+      autoplay: true,
+      autoplaySpeed: 5000,
+      speed: 300,
+      arrows: false
+    });
+  }, 500);
 
   $('.main-banner').on('beforeChange', (event, slick, currentSlide, nextSlide) => {
     if(currentSlide !== nextSlide) {
       let slide = $(slick['$slides'][currentSlide]);
-      slide.find('.overlay').hide();
       slide.find('.overview').hide();
       slide.find('.project-view img').hide();
     }
@@ -30,10 +30,11 @@ $(document).ready(() => {
 
   $('.main-banner').on('afterChange', (event, slick, currentSlide) => {
     let slide = $(slick['$slides'][currentSlide]);
-    slide.find('.overlay').slideDown(500);
     slide.find('.project-view img').slideDown(500);
     slide.find('.overview').fadeIn(700);
   });
+
+  moveBackground();
 
   $('.nav-trigger').click(() => {
     let overlay = $('body > .overlay');
@@ -62,15 +63,27 @@ $(document).ready(() => {
        $('body > header').addClass('fixed');
     else
        $('body > header').removeClass('fixed');
+     console.log($(window).width());
+    if($(window).width() < 769) {
+      if(isScrolledIntoView('.contacts-wrapper', false))
+        $('.contact .title').css({
+          width: ''
+        });
+      if(!isScrolledIntoView('.contacts-wrapper', false))
+        $('.contact .title').css({
+          width: 0
+        });
 
-    if(!isScrolledIntoView('.contacts', false))
-      $('.contact .title').css({
-        width: 0
-      });
-    if(isScrolledIntoView('.contacts', true))
-      $('.contact .title').css({
-        width: ''
-      });
+    } else {
+      if(!isScrolledIntoView('.contacts-wrapper', false))
+        $('.contact .title').css({
+          width: 0
+        });
+      if(isScrolledIntoView('.contacts-wrapper', true))
+        $('.contact .title').css({
+          width: ''
+        });
+    }
   });
 
   $(window).on('mousemove  touchstart ',  function(e) {

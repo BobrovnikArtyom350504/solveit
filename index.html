@@ -10,7 +10,7 @@
     <section class="overlay">
       <nav class='main-nav'>
         <a href="#">home</a>
-        <a href="#">about us</a>
+        <a href="#about-us">about us</a>
         <a href="#portfolio">portfolio</a>
         <a class="btn rounded" href="#contact-us">contact us</a>
       </nav>
@@ -21,7 +21,7 @@
       </div>
       <nav class='main-menu'>
         <a href="#">home</a>
-        <a href="#">about us</a>
+        <a href="#about-us">about us</a>
         <a href="#portfolio">portfolio</a>
         <a class="btn rounded" href="#contact-us">contact us</a>
       </nav>
@@ -31,7 +31,6 @@
     </header>
     <section class="main-banner slider">
       <div class="slide">
-        <div class="trapezium-overlay overlay"></div>
         <div class="content">
           <div class="projects">
             <div class="project-view with-perspective">
@@ -56,7 +55,6 @@
         </div>
       </div>
       <div class="slide reverse">
-        <div class="circle-overlay overlay"></div>
         <div class="content">
           <div class="projects">
             <div class="project-view">
@@ -96,10 +94,11 @@
               <h3>IOT & CONSOLE</h3>
             </div>
             <div class="back">
-              <p>From tablets to smartphones,Chepri®
+              <p class="desktop">From tablets to smartphones,Chepri®
                 develops native and hybrid iOS®, Android®,
                 and Windows®, phone applications.
               </p>
+              <p class="mobile">From tablets to smartphones</p>
             </div>
           </div>
         </div>
@@ -110,10 +109,11 @@
               <h3>IOT & CONSOLE</h3>
             </div>
             <div class="back">
-              <p>Tablet specific applications have specific use
+              <p class="desktop">Tablet specific applications have specific use
                 -cases. We develop the right native or hybrid
                 software to get the job done.
               </p>
+              <p class="mobile">From tablets to smartphones</p>
             </div>
           </div>
         </div>
@@ -124,9 +124,10 @@
               <h3>IOT & CONSOLE</h3>
             </div>
             <div class="back">
-              <p>Focus on your brand with websites & web
+              <p class="desktop">Focus on your brand with websites & web
                 applications for any modern browser and
                 desktop apps for MacOS® and Windows®.</p>
+              <p class="mobile">From tablets to smartphones</p>
             </div>
           </div>
         </div>
@@ -137,9 +138,10 @@
               <h3>IOT & CONSOLE</h3>
             </div>
             <div class="back">
-              <p>Digital displays, multi-touch free-standing
+              <p class="desktop">Digital displays, multi-touch free-standing
                 kiosks and TV specific applications.
               </p>
+              <p class="mobile">From tablets to smartphones</p>
             </div>
           </div>
         </div>
@@ -150,10 +152,11 @@
               <h3>IOT & CONSOLE</h3>
             </div>
             <div class="back">
-              <p>We can program apps to speak to home
+              <p class="desktop">We can program apps to speak to home
                 appliances, bluetooth and near-field hardware
                 as well as your game console, like Xbox.
               </p>
+              <p class="mobile">From tablets to smartphones</p>
             </div>
           </div>
         </div>
@@ -164,15 +167,16 @@
               <h3>IOT & CONSOLE</h3>
             </div>
             <div class="back">
-              <p>Watches, glasses, VR and any combination
+              <p class="desktop">Watches, glasses, VR and any combination
                 ofwearable technology: We build thesoftware that drive devices.
               </p>
+              <p class="mobile">From tablets to smartphones</p>
             </div>
           </div>
         </div>
     </section>
     <section class="banners">
-      <div class="coder-designers">
+      <div id="about-us" class="coder-designers">
         <article>
           <h1>We’re Coders and Designers.</h1>
           <p>From app store to desktop,  Develops successful,
@@ -219,28 +223,35 @@
         </div>
       </div>
       <footer class="main-footer" id="contact-us">
-        <span class="email">solveit@gmail.com</span>
         <div class="contacts">
-          <div class="contact">
-            <div class="title">phone 1</div>
-            <span>+ 375 29 123 45 67</span>
+          <div class="contact-us">
+            <article>
+              <h3>get your project started</h3>
+              <h4>tolk to us today about web and app projects</h4>
+            </article>
+            <div class="email"><span>solveit@gmail.com</span></div>
           </div>
-          <div class="contact">
-            <div class="title">skype</div>
-            <span>solveitcompany</span>
-          </div>
-          <div class="contact mobile-hidden">
-            <div class="title">phone 2</div>
-            <span>+ 375 33 523 45 67</span>
-          </div>
-          <div class="contact">
-            <div class="title">place</div>
-            <span>Minsk, Belarus</span>
+          <div class="contacts-wrapper">
+            <div class="contact">
+              <div class="title">phone 1</div>
+              <span>+ 375 29 123 45 67</span>
+            </div>
+            <div class="contact">
+              <div class="title">skype</div>
+              <span>solveitcompany</span>
+            </div>
+            <div class="contact mobile-hidden">
+              <div class="title">phone 2</div>
+              <span>+ 375 33 523 45 67</span>
+            </div>
+            <div class="contact">
+              <div class="title">place</div>
+              <span>Minsk, Belarus</span>
+            </div>
           </div>
         </div>
         <div class="copyright">
-          <span>SolveIt © 2017 / All Rights Reserved</span>
-          <div class="social">
+           <div class="social">
             <a>
               <div class="social-icon social-icon-facebook"></div>
             </a>
@@ -251,6 +262,7 @@
               <div class="social-icon social-icon-instagram"></div>
             </a>
           </div>
+          <span>SolveIt © 2017 / All Rights Reserved</span>
         </div>
       </footer>
     </section>

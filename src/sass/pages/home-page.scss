@@ -135,8 +135,20 @@
             box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, .1);
             background: rgba(255, 255, 255, .35);
 
+            .mobile {
+              display: none;
+            }
+
             @include respond-to(sm) {
               padding: 10px;
+
+              .desktop {
+                display: none;
+              }
+
+              .mobile {
+                display: block;
+              }
             };
 
             p {
@@ -235,6 +247,10 @@
   background: url('../../assets/img/coders-designers.png') center 0 no-repeat fixed;
   background-size: cover;
   position: relative;
+
+  @include respond-to(sm) {
+    background-attachment: initial;
+  }
 
   &:before {
     position: absolute;

@@ -24,38 +24,7 @@
     }
 
     &.reverse {
-      background-image: url('../../assets/img/slide-bg-2.png');
-    }
-
-    .circle-overlay {
-      height: 60vh;
-      width: 60vh;
-      bottom: 0;
-      right: 0;
-      background: url('../../assets/img/circle.png');
-      background-position: bottom right;
-    }
-
-    .overlay.trapezium-overlay {
-      height: 100%;
-      width: 60%;
-      background: url('../../assets/img/trapezium.png');
-      background-size: cover;
-    }
-
-    .overlay {
-      position: absolute;
-      background-size: contain;
-      background-repeat: no-repeat;
-      display: none;
-      z-index: 1;
-
-      @media screen and (orientation:portrait) {
-        display: none !important;
-      }
-      @include respond-to(sm) {
-        display: none !important;
-      };
+      background-image: url('../../assets/img/slide-bg-2.jpg');
     }
 
     &.reverse {
@@ -213,10 +182,6 @@
         }
       }
 
-      .overlay {
-        display: none!important;
-      }
-
       &.reverse {
 
         .content {
@@ -232,10 +197,6 @@
       }
     }
     @media (min-width: 1800px) {
-      .circle-overlay {
-        height: 35vw;
-        width: 35vw;
-      }
       & > .content {
         .projects {
           .project-view {

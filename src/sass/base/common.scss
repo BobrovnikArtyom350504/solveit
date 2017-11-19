@@ -21,29 +21,30 @@
 @import '../layouts/header';
 @import '../layouts/footer';
 
-.social-icon {
+.social-icon{
     background-image: url(../../assets/img/social-icons.png);
     background-repeat: no-repeat;
-    display: inline-block;
+    display: block;
 }
 
 .social-icon-facebook {
-    width: 35px;
-    height: 35px;
-    background-position: -5px -5px;
+    width: 48px;
+    height: 48px;
+    background-position: 0 0;
 }
 
 .social-icon-google-play {
-    width: 35px;
-    height: 35px;
-    background-position: -50px -5px;
+    width: 48px;
+    height: 48px;
+    background-position: -48px 0;
 }
 
 .social-icon-instagram {
-    width: 35px;
-    height: 35px;
-    background-position: -95px -5px;
+    width: 48px;
+    height: 48px;
+    background-position: -96px 0;
 }
+
 
 .clear-fix {
   clear: both;
